@@ -9,5 +9,4 @@ func routes(_ app: Application) throws {
     let memoryStore = MemoryStore()
 
     try app.register(collection: TodoController(memoryStore: memoryStore))
-    try app.register(collection: UsersController(memoryStore: memoryStore))
 }
