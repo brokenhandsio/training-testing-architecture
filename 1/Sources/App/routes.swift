@@ -6,6 +6,8 @@ func routes(_ app: Application) throws {
         "It works!"
     }
 
-    try app.register(collection: TodoController())
-    try app.register(collection: UsersController())
+    let memoryStore = MemoryStore()
+
+    try app.register(collection: TodoController(memoryStore: memoryStore))
+    try app.register(collection: UsersController(memoryStore: memoryStore))
 }
